@@ -16,7 +16,7 @@ describe('attemptQuestion : behaviour based on various input arguments', () => {
     })
 
     test('when non number "abcd" is passed as argument, returns error response "valid number must be supplied."', () => {
-        expect(attemptQuestion()).toBe('valid number must be supplied.');
+        expect(attemptQuestion('jane')).toBe('valid number must be supplied.');
     })
 
     test('when valid number argument is passed, for example 1', () => {
@@ -28,11 +28,11 @@ describe('attemptQuestion : behaviour based on various input arguments', () => {
 describe('attemptQuestion : response data', () => {
 
     test('when correct answer is selected, return "Your answer is correct."', () => {
-        expect(attemptQuestion(1)).toBe('Your answer is correct.');
+        expect(attemptQuestion(3)).toBe('Your answer is correct.');
     })
 
     test('when incorrect answer is selected, return "Your answer is incorrect."', () => {
-        expect(attemptQuestion(4)).toBe('Your answer is incorrect.');
+        expect(attemptQuestion(1)).toBe('Your answer is incorrect.');
     })
 
 })
