@@ -22,7 +22,7 @@ describe('GetQuestionData behaviour based on various input arguments', () => {
     })
 
     test('when null argument passed', () => {
-        expect(getQuestionData(null)).toBe('questionID must be a string.');
+        expect(getQuestionData(null)).toBe('questionID must be supplied.');
     })
 
 })
