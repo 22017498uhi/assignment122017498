@@ -1,0 +1,2 @@
+const getQuestionData = require('./getQuestionData');
+
