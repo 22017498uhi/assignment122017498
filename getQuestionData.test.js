@@ -6,23 +6,23 @@ const getQuestionData = require('./getQuestionData');
 //Write tests related to function argument
 describe('GetQuestionData : behaviour based on various input arguments', () => {
 
-    test('when valid string argument passed', () => {
+    test('when valid string "balances" argument passed, returns valid data', () => {
         expect(getQuestionData('balances')).toHaveProperty('questions'); //valid response will have questions property atleast
     })
 
-    test('when data not found for string argument passed', () => {
+    test('when invalid string "abcd" passed for input, returns empty object', () => {
         expect(getQuestionData('abcd')).toBeFalsy(); //most likely empty object or undefined will be returned
     })
 
-    test('when no argument passed', () => {
+    test('when no argument passed, returns error "questionID must be supplied."', () => {
         expect(getQuestionData()).toBe('questionID must be supplied.');
     })
 
-    test('when number argument passed', () => {
+    test('when 123 (number) argument passed, returns error response "questionID must be a string."', () => {
         expect(getQuestionData(123)).toBe('questionID must be a string.');
     })
 
-    test('when null argument passed', () => {
+    test('when null argument passed, returns error "questionID must be supplied."', () => {
         expect(getQuestionData(null)).toBe('questionID must be supplied.');
     })
 
